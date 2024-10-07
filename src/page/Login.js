@@ -26,6 +26,7 @@ function Login() {
         // Handle successful login (e.g., save token, redirect user)
         console.log('Login successful:', data);
         navigate('/home')
+        
       } else {
         // Handle login error
         setError(data.message || 'Login failed. Please try again.');
