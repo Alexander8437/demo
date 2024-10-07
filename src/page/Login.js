@@ -11,14 +11,16 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      const response = await fetch('http://147.79.67.201:8081/MS/Motherson/crm/v1/signin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch('http://147.79.67.201:8081/MS/Motherson/crm/v1/signin',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+        });
 
       const data = await response.json();
 
@@ -26,7 +28,7 @@ function Login() {
         // Handle successful login (e.g., save token, redirect user)
         console.log('Login successful:', data);
         navigate('/home')
-        
+
       } else {
         // Handle login error
         setError(data.message || 'Login failed. Please try again.');
