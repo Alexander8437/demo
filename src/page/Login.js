@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('https://147.79.67.201:8081/MS/Motherson/crm/v1/signin', {
+      const response = await fetch('http://147.79.67.201:8081/MS/Motherson/crm/v1/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
